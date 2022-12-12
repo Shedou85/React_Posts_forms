@@ -1,9 +1,14 @@
-import Logo from "./components/Logo";
+import React from 'react';
+import Input from "./components/Inputs/Input";
 
 function App() {
   return (
     <div className="App">
-      <Logo/>
+      <div className='container'>
+        <h1>Create and delete post's</h1>
+        <Input />
+      </div>
+      
     </div>
   );
 }

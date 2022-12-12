@@ -1,0 +1,14 @@
+.inputWrapper {
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 1rem;
+   gap: 10px;
+   .inputTitle {
+      font-size: 1.5rem;
+      font-weight: 600;
+   }
+   .inputPosts {
+      font-size: 1.5rem;
+      font-weight: 600;
+   }
+}
