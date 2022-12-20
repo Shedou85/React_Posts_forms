@@ -1,71 +1,229 @@
-//import input sccs file
-@import url(../components/UI/Inputs/Input.module.scss);
-
-:root {
-  --background-color: #1d3557;
-  --primary-color: #f1faee;
-  --secondary-color: #457b9d;
-  --tertiary-color: #a8dadc;
-  --quaternary-color: #e63946;
-}
-
 
 body {
-  background-color: var(--background-color);
-  color: var(--primary-color);
-
-  
-  .container{
+  padding: 0;
+  margin: 0;
+  background-color: #12492f;
+  font-size: 20px;
+  color: white;
+  .container {
     max-width: 1440px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    margin: 0 auto;
-    border: solid 4px var(--primary-color);
-    border-radius: 10px;
-  }
-  .post {
-    display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 600px;
-    height: 100%;
-    background-color: var(--secondary-color);
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px;
-    margin-bottom: 25px;
-    box-shadow: 0 0 10px 0 var(--quaternary-color);
-    .post__content {
+    margin: 0 auto;
+    .loginForm {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100vh;
+      .loginForm__title {
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+      .loginForm__input {
+        width: 100%;
+        height: 50px;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 5px;
+        padding: 0 10px;
+        font-size: 20px;
+        outline: none;
+        
+      }
+      .input__username {
+        color: #12492f;
+        margin-bottom: 30px;
+        .loginForm__item_username {
+          background-color: #f7a325;
+          font-size: 30px;
+          border: #12492f solid 1px;
+          &::placeholder {
+            color: #eee;
+          }
+          &:focus {
+            border: #12492f solid 1px;
+            color: #eee;
+          }
+          &:active {
+            border: #12492f solid 1px;
+            color: #eee
+          }
+        }
+        
+      }
+      .input__password {
+        color: #12492f;
+        margin-bottom: 30px;
+        .loginForm__item_password {
+          background-color: #f7a325;
+          font-size: 30px;
+          &::placeholder {
+            color: #eee;
+          }
+          &:focus {
+            border: #12492f solid 1px;
+            color: #eee;
+          }
+          &:active {
+            border: #12492f solid 1px;
+            color: #eee
+          }
+        }
+      }
+      .loginForm__button {
+        width: 150px;
+        height: 50px;
+        border: none;
+        border-radius: 5px;
+        background-color: #f5f5f5;
+        color: #12492f;
+        font-size: 20px;
+        font-weight: 700;
+        outline: none;
+        cursor: pointer;
+      }
+    }
+    .content {
+      padding-top: 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       width: 100%;
-      height: 100%;
-      background-color: var(--tertiary-color);
-      border-radius: 10px;
-      padding: 10px;
-      margin: 10px;
-      box-shadow: 0 0 10px 0 var(--quaternary-color);
-      .title {
+      min-height: 100vh;
+      .content_title {
+        font-weight: 700;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .content_item {
+        display: flex;
+        .content_header {
+          width: 600px;
+          border: solid 3px #f7a325;
+          border-radius: 10px;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          padding: 20px;
+          margin-bottom: 30px;
+          .create_user {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 150px;
+            background-color: #f7a325;
+            font-size: 25px;
+            cursor: pointer;
+            &:hover {
+              background-color: #f5f5f5;
+              color: #12492f;
+            }
+          }
+          .user_list {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 150px;
+            background-color: #f7a325;
+            font-size: 25px;
+            cursor: pointer;
+            &:hover {
+              background-color: #f5f5f5;
+              color: #12492f;
+            }
+          }
+        }
+      }
+      .form_container {
+        border: solid 3px #f7a325;
+        border-radius: 10px;
+        width: 650px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+      .user_creation_list_item {
+        border: solid 3px #f7a325;
+        border-radius: 10px;
+        width: 800px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .user_creation_form_item {
+          width: 400px;
+          display: flex;
+          gap: 20px;
+          align-items: center;
+          margin-bottom: 20px;
+          
+        }
+        .user_title {
+          font-weight: 900;
+          color: #f7a325;
+        }
+      }
+      .user_creation_form_item_input {
+        background-color: #f7a325;
         font-size: 30px;
+        border: #12492f solid 1px;
+        &::placeholder {
+          color: #eee;
+        }
+        &:focus {
+          border: #12492f solid 1px;
+          color: #eee;
+        }
+        &:active {
+          border: #12492f solid 1px;
+          color: #eee
+        }
+      }
+      
+      .user_creation_list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        .user_label {
+          & span {
+            color: #f7a325;
+            font-weight: 700;
+          }
+        }
+
       }
     }
-    .post__btn {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
-      background-color: var(--tertiary-color);
-      border-radius: 10px;
-      padding: 10px;
-      margin: 10px;
-      box-shadow: 0 0 10px 0 var(--quaternary-color);
+    .btn {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      width: 150px;
+      height: 30px;
+      border: none;
+      border-radius: 5px;
+      background-color: #f5f5f5;
+      color: #12492f;
+      font-size: 20px;
+      font-weight: 700;
+      outline: none;
+      cursor: pointer;
     }
+    .button_item {
+      width: 400px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    
   }
-
 }

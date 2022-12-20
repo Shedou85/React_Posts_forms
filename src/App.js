@@ -1,29 +1,32 @@
-import React, {useState} from 'react';
-import Postitem from "./components/Postitem";
-import PostList from "./components/PostList";
-import Buttons from "./components/UI/Buttons/Buttons";
+
+import React, { useState } from 'react';
+import LoginForm from './components/Login/LoginForm';
+import Main from './components/Main/Main';
 
 function App() {
-  const [posts, setPosts] = useState([
-    {id: 1, title: 'React', body: 'Description'},
-    {id: 2, title: 'Angular', body: 'Description'},
-    {id: 3, title: 'Vue', body: 'Description'},
-  ])
   
+  let password = 'marius';
 
-  
+  const [login, setLogin] = useState({
+    username: '',
+    password: '',
+  });
+  const [showLoginPage, setShowLoginPage] = useState(true);
+
+  const loginCheck = () => {
+      if (login.password === password) {
+        setShowLoginPage(false);
+      } else {
+        alert('wrong password');
+        setShowLoginPage(true); 
+      }
+  }
   return (
     <div className="App">
       <div className='container'>
-        <form>
-          <input type='text' placeholder='Post title'/>
-          <input type='text' placeholder='Post description'/>
-          <Buttons />
-        </form>
-        <PostList posts={posts} title='Posts for React'/>
-        
+        {showLoginPage ? <LoginForm login={login} setLogin={setLogin}  handleClick={loginCheck}/> : <Main /> }
+       
       </div>
-      
     </div>
   );
 }
