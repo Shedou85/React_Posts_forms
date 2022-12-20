@@ -27,11 +27,14 @@ const Main = () => {
   },
 ])
   
-  useEffect(function() {
-    console.log('App Loaded Successfully')
-    
+  useEffect(() => {
+    console.log('App mounted')
+    const data = JSON.parse(localStorage.getItem('userInfo'))
+    if (data) {
+      setUserInfo(data)
+    }
+  }, [setUserInfo])
 
-  }, [userInfo])
   
   const showCreatForm = () => {
     setUserListOrForm(true)
